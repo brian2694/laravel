@@ -13,6 +13,6 @@ class PruebaController extends Controller
 		if(env("APP_DEBUG")){
 			return "debug";
 		}
-		return "Hola bebex";
+		return sprintf("Hola bebe: %s", config("app.name"));
 	}
 }
