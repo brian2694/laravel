@@ -14,16 +14,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT COUNT(*) FROM users;";
+$sql = "SELECT COUNT(*) as total FROM users;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
+        echo "</br>" . "count: " .  $row['total'];
     }
 } else {
     echo "0 results";
 }
+
 $conn->close();
 ?>
