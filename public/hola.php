@@ -1,3 +1,3 @@
 <?php
 
-echo "hola estatico";
+echo "hola estatico: " . date("h:m:s a");
