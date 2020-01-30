@@ -1,6 +1,6 @@
 <?php
 
-echo "hola";
+echo "hola </br>";
 
 $servername = "64.227.53.220";
 $username = "movu";
@@ -14,17 +14,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT COUNT(*) as total FROM users;";
+$sql = "SELECT id, name FROM users LIMIT 1;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "</br>" . "count: " .  $row['total'];
+        echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
     }
 } else {
     echo "0 results";
 }
-
 $conn->close();
 ?>
