@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'PruebaController@index');
+Route::get('/select', 'PruebaController@select');
